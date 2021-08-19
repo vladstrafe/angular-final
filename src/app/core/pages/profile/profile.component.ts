@@ -9,12 +9,15 @@ export class ProfileComponent implements OnInit {
 
   constructor() { }
 
+  profileForm = new FormGroup({
+    password: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9]')]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    age: new FormControl(null)
+  })  
+
+
   ngOnInit(): void {
-    profileForm = new FormGroup({
-      password: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9]')]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      age: new FormControl(null)
-    })  
+
   }
 
 }

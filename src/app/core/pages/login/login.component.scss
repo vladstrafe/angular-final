@@ -1,0 +1,24 @@
+:host {
+	display: block;
+	margin: 0 auto;
+	width: 400px;
+	padding: 30px;
+}
+
+.login__title {
+	text-align: center;
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	&__input {
+		padding: 5px;
+		margin-bottom: 10px;
+	}
+	&__btn {
+		display: block;
+		margin: 0 auto;
+		width: 200px;
+	}
+}

@@ -1,0 +1,7 @@
+.navbar {
+	padding: 20px 0;
+	margin-bottom: 20px;
+	&__item:not(:last-child) {
+		margin-right: 30px;
+	}
+}

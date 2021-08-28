@@ -1,10 +1,10 @@
 <h2 class="profile__title">Profile</h2>
-<form *ngIf="profileForm" [formGroup]="profileForm" class="profile-form">
+<form *ngIf="profileForm" [formGroup]="profileForm" class="profile-form" (ngSubmit)="editProfile(profileForm)">
 	<label for="username" class="profile-form__label">Username</label>
 	<input type="text" class="profile-form__input" id="username" placeholder="Username" formControlName="username">
 	<label for="email" class="profile-form__label">Email</label>
-	<input type="email" class="profile-form__input" name="email" id="email" placeholder="Email" formControlName="email">
+	<input type="email" class="profile-form__input" id="email" placeholder="Email" formControlName="email">
 	<label for="age" class="profile-form__label">Age</label>
 	<input type="number" class="profile-form__input" id="age" placeholder="Age" formControlName="age">
-	<button type="submit" class="profile-form__btn" [disabled]="!profileForm.valid">Save</button>
+	<button type="button" class="profile-form__btn" [disabled]="!profileForm.valid">Save</button>
 </form>

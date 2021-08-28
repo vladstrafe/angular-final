@@ -1,0 +1,9 @@
+<h2 class="auth__title">Sign In</h2>
+<form *ngIf="authForm" [formGroup]="authForm" class="auth-form" (ngSubmit)="onSubmit(authForm)">
+	<label for="email" class="auth-form__label">Email</label>
+	<input type="email" class="auth-form__input" name="email" id="email" placeholder="Email" formControlName="email">
+	<label for="password" class="auth-form__label">Password</label>
+	<input type="password" class="auth-form__input" id="password" placeholder="Password" formControlName="password">
+	<button type="submit" class="auth-form__btn" [disabled]="!authForm.valid">Sign Up</button>
+	<button type="button" class="auth-form__btn" [disabled]="!authForm.valid" (click)="login(authForm)">Sign In</button>
+</form>

@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+	<div class="search-wrap">
+		<input type="text" id="search-input" class="search-wrap__input" placeholder="Search games" *ngIf="searchField" [formControl]="searchField">
+		<button class="search-wrap__btn" (click)="onSubmit(searchField)">Search</button>
+	</div>
+
+	<h2 class="games__title">Featured games</h2>
+	<div class="games-list">
+		<div class="games-card" *ngFor="let game of foundGames">
+			<div class="games-card-preview">
+				<h3 class="games-card__name">{{ game.name }}</h3>
+				<p class="games-card__price">{{ game.price }} UAH</p>
+			</div>
+			<p class="games-card__description">{{ game.description }}</p>
+			<button class="games-card__btn">Add to library</button>
+		</div>
+	</div>
+</div>

@@ -1,15 +1,15 @@
 const { User } = require('../models/userModel');
 
-const getUser = async (email) => {
-	const user = await User.findOne({email})
+const getUser = async (_id) => {
+	const user = await User.findOne({_id})
 
 	if (!user) throw new Error('No users found');
 	
 	return user
 }
 
-const patchUser = async (email, newUsername, newEmail, newAge) => {
-	const user = await User.findOne({email})
+const patchUser = async (_id, newUsername, newEmail, newAge) => {
+	const user = await User.findOne({_id})
 
 	if (!user) throw new Error('No users found');
 

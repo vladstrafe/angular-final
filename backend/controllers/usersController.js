@@ -13,8 +13,8 @@ router.get('/profile', async (req, res) => {
 
 		const [, token] = authorization.split(' ');
 		const tokenPayload = jwt.verify(token, 'secret');
-		const email = tokenPayload.email
-		const user = await getUser(email)
+		const userId = tokenPayload._id
+		const user = await getUser(userId)
 
 		res.json({
 			username: user.username,
@@ -35,12 +35,12 @@ router.patch('/profile', async (req, res) => {
 
 		const [, token] = authorization.split(' ');
 		const tokenPayload = jwt.verify(token, 'secret');
-		const email = tokenPayload.email
+		const userId = tokenPayload._id
 		const newUsername = req.body.username
 		const newEmail = req.body.email
 		const newAge = req.body.newAge
 
-		await patchUser(email, newUsername, newEmail, newAge)
+		await patchUser(userId, newUsername, newEmail, newAge)
 		res.json('User updated successfully')
 	} catch(err) {
 		res.status(401).json(err)

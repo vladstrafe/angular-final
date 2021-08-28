@@ -6,9 +6,12 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable()
-export class AuthInterceptor implements HttpInterceptor {  
+export class AuthInterceptor implements HttpInterceptor {
+  
+  constructor(private readonly router: Router) { }
   
   getCookie(name: string) {
     let matches = document.cookie.match(new RegExp(
@@ -29,6 +32,9 @@ export class AuthInterceptor implements HttpInterceptor {
   
       return next.handle(cloned);  
     }
-    else return next.handle(request)
+    else {
+      this.router.navigate(['../auth'])
+      return next.handle(request)
+    }
   }
 }

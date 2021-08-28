@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+
 <h2 class="profile__title">Profile</h2>
 <form *ngIf="profileForm" [formGroup]="profileForm" class="profile-form" (ngSubmit)="editProfile(profileForm)">
 	<label for="username" class="profile-form__label">Username</label>

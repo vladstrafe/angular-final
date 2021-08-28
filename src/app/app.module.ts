@@ -10,6 +10,7 @@ import { ProfileComponent } from './core/pages/profile/profile.component';
 import { GamesComponent } from './core/pages/games/games.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
     ProfileComponent,
     GamesComponent,
     NavbarComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

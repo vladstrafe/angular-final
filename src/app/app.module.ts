@@ -11,6 +11,7 @@ import { GamesComponent } from './core/pages/games/games.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
+import { LibraryComponent } from './core/pages/library/library.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
     GamesComponent,
     NavbarComponent,
     PageNotFoundComponent,
+    LibraryComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit {
   constructor(private readonly usersService: UsersService) {  }
 
   profileForm = new FormGroup({
-    username: new FormControl('', Validators.pattern('[a-zA-Z0-9 ]{0,20}')),
+    username: new FormControl('', [Validators.maxLength(20), Validators.pattern('[a-zA-Z0-9 ]{0,20}')]),
     email: new FormControl('', [Validators.required, Validators.email]),
     age: new FormControl(null)
   })  
@@ -37,7 +37,7 @@ export class ProfileComponent implements OnInit {
       username: form.value.username,
       email: form.value.email,
       age: form.value.age
-    })
+    }).subscribe()
   }
 
 }

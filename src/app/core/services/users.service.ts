@@ -21,4 +21,8 @@ export class UsersService {
     return this.http.post('http://localhost:8080/api/users', email)
   }
 
+  getOwnedGames() {
+    return this.http.get('http://localhost:8080/api/library')
+  }
+
 }

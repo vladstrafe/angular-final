@@ -38,7 +38,7 @@ router.patch('/profile', async (req, res) => {
 		const userId = tokenPayload._id
 		const newUsername = req.body.username
 		const newEmail = req.body.email
-		const newAge = req.body.newAge
+		const newAge = req.body.age
 
 		await patchUser(userId, newUsername, newEmail, newAge)
 		res.json('User updated successfully')

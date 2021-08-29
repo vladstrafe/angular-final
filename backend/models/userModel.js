@@ -16,6 +16,10 @@ const User = mongoose.model('User', {
     age: {
         type: Number
     },
+    games: {
+        type: Array,
+        required: true
+    },
     created_date: {
         type: Date,
         default: Date.now()

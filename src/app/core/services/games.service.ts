@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -10,5 +11,9 @@ export class GamesService {
 
   fetchGames() {
     return this.http.get('http://localhost:8080/api/games')
+  }
+
+  getLibrary() {
+    return this.http.get('http://localhost:4200/api/library')
   }
 }

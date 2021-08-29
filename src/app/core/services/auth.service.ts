@@ -7,8 +7,8 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  regUrl = 'http://localhost:8080/api/auth/register'
-  loginUrl = 'http://localhost:8080/api/auth/login'
+  regUrl = '/api/auth/register'
+  loginUrl = '/api/auth/login'
 
   constructor(private readonly http: HttpClient) { }
 

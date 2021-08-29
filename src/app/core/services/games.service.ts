@@ -10,7 +10,7 @@ export class GamesService {
   constructor(private readonly http: HttpClient) { }
 
   fetchGames() {
-    return this.http.get('http://localhost:8080/api/games')
+    return this.http.get('/api/games')
   }
 
   getLibrary() {

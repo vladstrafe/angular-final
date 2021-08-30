@@ -2,11 +2,11 @@
   "name": "final",
   "version": "0.0.0",
   "scripts": {
+    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "start": "node server.js",
-    "listen": "nodemon -L backend/index.js"
+    "start": "node server.js"
   },
   "private": true,
   "dependencies": {

@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const User = mongoose.model('User', {
     username: {
-        type: String
+        type: String,
+        default: ''
     },
     email: {
         type: String,
@@ -14,7 +15,8 @@ const User = mongoose.model('User', {
         required: true,
     },
     age: {
-        type: Number
+        type: Number,
+        default: null
     },
     games: {
         type: Array,

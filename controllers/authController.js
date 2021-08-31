@@ -37,7 +37,7 @@ router.post('/login', async (req, res) => {
     } catch (err) {
         if (err === '!email or !password') res.json(err)
         else {
-            res.status(400).json({message: 'login error'})
+            res.status(400).json(err)
         }
     }
 });

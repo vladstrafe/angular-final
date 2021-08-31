@@ -34,7 +34,7 @@ const start = async () => {
             useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true
         });
     
-        app.listen(8080);
+        app.listen(process.env.PORT || 3000);
     } catch (err) {
         console.error(`Error on server startup: ${err.message}`);
     }

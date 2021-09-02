@@ -7,21 +7,18 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   
-  constructor(private readonly router: Router) { }
+  constructor(
+    private readonly router: Router,
+    private readonly authService: AuthService
+  ) { }
   
-  getCookie(name: string) {
-    let matches = document.cookie.match(new RegExp(
-      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-    ));
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-  }
-
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const token = this.getCookie('user')
+    const token = this.authService.getCookie('user')
 
     if (token) {
       const cloned = request.clone({

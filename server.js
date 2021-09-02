@@ -22,10 +22,10 @@ app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname + '/dist/final/index.html'))
 })
 
-app.use('/api/auth', authRouter);
+app.use('/auth', authRouter);
 app.use(authMiddleware);
-app.use('/api/games', gamesRouter);
-app.use('/api/users', userRouter);
+app.use('/games', gamesRouter);
+app.use('/users', userRouter);
 // app.use('/api/trucks', trucksRouter);
 
 const start = async () => {
@@ -34,7 +34,8 @@ const start = async () => {
             useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true
         });
     
-        app.listen(process.env.PORT || 3000);
+        app.listen(3000);
+        // app.listen(process.env.PORT || 3000);
     } catch (err) {
         console.error(`Error on server startup: ${err.message}`);
     }

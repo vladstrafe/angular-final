@@ -8,10 +8,10 @@ export class GamesService {
   constructor(private readonly http: HttpClient) { }
 
   fetchGames() {
-    return this.http.get('api/games')
+    return this.http.get('games')
   }
 
   getLibrary() {
-    return this.http.get('api/library')
+    return this.http.get('library')
   }
 }

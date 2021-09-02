@@ -7,16 +7,32 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  regUrl = 'api/auth/register'
-  loginUrl = 'api/auth/login'
+  regUrl = 'auth/register'
+  loginUrl = 'auth/login'
 
   constructor(private readonly http: HttpClient) { }
+
+  regUser(user: any) {
+    return this.http.post(this.regUrl, user)
+  }
 
   login(user: any) {
     return this.http.post(this.loginUrl, user)
   }
 
-  regUser(user: any) {
-    return this.http.post(this.regUrl, user)
+  getCookie(name: string) {
+    let matches = document.cookie.match(new RegExp(
+      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
   }
+
+  isLoggedIn() {
+    const token = this.getCookie('user')
+
+    if(token) return true
+    
+    return false
+  }
+
 }
